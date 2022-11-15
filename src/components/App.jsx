@@ -52,9 +52,14 @@ class App extends Component {
   };
 
   componentDidMount() {
-    if (localStorage.getItem('phone-book'))
+    // if (localStorage.getItem('phone-book'))
+    //   this.setState({
+    //     contacts: JSON.parse(localStorage.getItem('phone-book')),
+    //   });
+    const parsedContacts = localStorage.getItem('phone-book');
+    if (parsedContacts)
       this.setState({
-        contacts: JSON.parse(localStorage.getItem('phone-book')),
+        contacts: JSON.parse(parsedContacts),
       });
   }
 
